@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react"
+import {userContext} from './context'
+import Header2 from './context-header2'
+import Content2 from './context-content2'
+ 
+export default function App(){
+  let[user,setUser]=React.useState('')
+  return(
+    <userContext.Provider value={[user,setUser]}>
+      <Header2/>
+      <Content2/>
+    </userContext.Provider>
+  )
 }
-
-export default App;
+ 
